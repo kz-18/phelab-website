@@ -574,6 +574,76 @@ section.block:last-of-type { border-bottom: none; }
   }
 }
 
+/* ---------- What We Do page ---------- */
+
+.mission-statement {
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--ink);
+  text-align: center;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.approach-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+  text-align: left;
+}
+
+.approach-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+}
+
+.approach-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.focus-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+
+.focus-detail:first-child {
+  border-top: none;
+}
+
+.focus-detail h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.focus-detail p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin: 0 auto;
+  max-width: 70ch;
+}
+
+@media (max-width: 700px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Footer ---------- */
 
 footer {
