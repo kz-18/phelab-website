@@ -251,6 +251,15 @@ section.block:last-of-type { border-bottom: none; }
   transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
+.alumni-list {
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+}
+
 .person-card:hover {
   box-shadow: 0 10px 24px -12px rgba(27, 36, 48, 0.25);
   transform: translateY(-2px);
@@ -500,43 +509,50 @@ section.block:last-of-type { border-bottom: none; }
   }
 }
 
-/* ---------- Contact ---------- */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-}
-
-.contact-card {
+.instagram-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 22px;
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 28px;
-}
-
-.contact-card h3 {
-  font-family: var(--font-display);
-  margin: 0 0 14px;
-  font-size: 1.15rem;
-}
-
-.contact-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 12px;
+  border-radius: 30px;
+  color: var(--ink);
+  font-weight: 600;
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.contact-row .label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-  width: 90px;
+.instagram-bar:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+  text-decoration: none;
+}
+
+.instagram-bar svg {
   flex-shrink: 0;
-  padding-top: 3px;
+  color: var(--teal-dark);
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+  justify-items: center;
+}
+
+.instagram-grid .instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Affiliates ---------- */
@@ -579,10 +595,9 @@ section.block:last-of-type { border-bottom: none; }
 .mission-statement {
   max-width: 720px;
   margin: 0 auto;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--ink-soft);
   text-align: center;
 }
 
@@ -679,4 +694,90 @@ footer .wrap {
 @media (max-width: 480px) {
   .hero { padding: 48px 0 40px; }
   section.block { padding: 40px 0; }
+}
+
+/* ---------- Carousel ---------- */
+
+.carousel {
+  position: relative;
+  max-width: 700px;
+  margin: 24px auto 0;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-caption {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 10px 0 0;
+  padding: 0 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(27, 36, 48, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--teal-dark);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--amber);
 }

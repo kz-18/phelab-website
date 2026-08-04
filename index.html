@@ -20,7 +20,6 @@
           <li><a href="people.html">People</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="media.html">Media</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -31,7 +30,7 @@
     <p class="eyebrow">Arizona State University &mdash; Edson College of Nursing and Health Innovation</p>
     <img src="images/PHELab.png" alt="Public Health Ethics Lab" style="width: 100%; max-width: 400px; height: auto; margin: 4px auto 24px; display: block;">
     <p class="lede" style="margin-left: auto; margin-right: auto;">
-      Welcome to the Public Health Ethics Lab, led by Dr. Rachel Gur-Arie!   We are located at Arizona State University &mdash;
+      Welcome to the Public Health Ethics Lab, led by Dr. Rachel Gur-Arie!   We are located at Arizona State University -
       Edson College of Nursing and Health Innovation
     </p>
     <div class="hero-actions" style="justify-content: center;">
@@ -44,29 +43,11 @@
   <section class="block">
     <div class="wrap">
       <span class="tab teal"></span>
-      <h2>Research focus</h2>
-      <p class="section-note">
-        Our team studies how religious beliefs and community values shape attitudes towards vaccines. We
-        aim to learn directly from community members about how their backgrounds and faith traditions
-        influence their views. 
-      </p>
-      <div class="focus-grid">
-        <div class="focus-card">
-          <h3>Aim 1</h3>
-          <p>To investigate religious-based attitudes towards three types of vaccines among Christian and
-            Jewish community leaders and pre-health students in the Phoenix metropolitan area
-          </p>
-        </div>
-        <div class="focus-card">
-          <h3>Aim 2</h3>
-          <p>To begin curriculum development targeted for pre-health students that explores religion-based attitudes towards
-            vaccine hesitancy
-          </p>
-        </div>
-        <div class="focus-card">
-          <h3>Aim 3</h3>
-          <p>To investigate the generalizability of our findings by surveying a nationally representative sample of
-            healthcare workers in the US
+      <h2>Our Mission</h2>
+      <p class="mission-statement">
+        To <strong>respond</strong> to problems within the public health/healthcare
+        system, <strong>reimagine</strong> how to research them, and to <strong>redefine</strong> what it means to
+        build resilience in public health.
           </p>
         </div>
       </div>
@@ -76,8 +57,28 @@
   <section class="block">
     <div class="wrap">
       <span class="tab amber"></span>
-      <h2>End of the Year Celebration with Pickleball &mdash; Spring 2026!</h2>
-      <img src="images/2026 Spring Lab.jpg" alt="Our lab at pickleball, Spring 2026" style="max-width: 700px; width: 100%; height: auto; margin: 24px auto 0; display: block; border-radius: 10px;">
+      <h2>Lab Photo Highlights!</h2>
+
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="images/2026 Spring Lab.jpg" alt="Spring 2026">
+                <p class="carousel-caption">Our lab at pickleball, Spring 2026</p>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/2025 Fall Lab.jpg" alt="Fall 2025">
+                <p class="carousel-caption">Our lab at Lydia's, Fall 2025</p>
+              </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+
+        <div class="carousel-dots"></div>
+      </div>
     </div>
   </section>
 
@@ -85,7 +86,7 @@
     <div class="wrap">
       <span class="tab teal"></span>
       <h2>Affiliates</h2>
-      <p class="section-note">Organizations and institutions we collaborate with.</p>
+      <p class="section-note">Organizations and institutions the PHE Lab has worked with .</p>
       <div class="affiliates-grid">
 
        <div class="affiliate-card">
@@ -105,6 +106,46 @@
       <span>ASU Edson College of Nursing and Health Innovation</span>
     </div>
   </footer>
+
+<script>
+  document.querySelectorAll('.carousel').forEach(function(carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    let index = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
+
+    function goToSlide(i) {
+      index = i;
+      updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  });
+  </script>
 
 </body>
 </html>
