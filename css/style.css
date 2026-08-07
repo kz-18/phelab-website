@@ -63,7 +63,7 @@ img { max-width: 100%; display: block; }
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: var(--paper);
+  background: #92afb5;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
 }
 
 .brand span {
-  color: var(--teal);
+  color: #fefcf4;
 }
 
 nav ul {
@@ -243,6 +243,21 @@ section.block:last-of-type { border-bottom: none; }
   gap: 24px;
 }
 
+.pdf-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: var(--teal);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.pdf-btn:hover {
+  opacity: 0.85;
+}
+
 .person-card {
   background: var(--paper-raised);
   border: 1px solid var(--line);
@@ -388,17 +403,8 @@ section.block:last-of-type { border-bottom: none; }
   border-top: 1px solid var(--line);
 }
 
-.pub-list .pub-item:first-child { border-top: none; }
-
-/*
-.pub-item::before {
-  content: counter(pub, decimal-leading-zero);
-  font-family: var(--font-mono);
-  color: var(--amber);
-  font-size: 0.95rem;
-  padding-top: 2px;
-}
-*/
+.pub-list .pub-item:first-child {
+  border-top: none; }
 
 .pub-title {
   font-family: var(--font-display);
@@ -659,19 +665,73 @@ section.block:last-of-type { border-bottom: none; }
   }
 }
 
+/* ---------- Awards and Recognitions page ---------- */
+
+.awards-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pub;
+}
+
+.awards-item {
+  counter-increment: pub;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.awards-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+
+.awards-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.awards-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.awards-meta {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
 /* ---------- Footer ---------- */
 
 footer {
   padding: 32px 0 48px;
   font-size: 0.85rem;
   color: var(--ink-soft);
+  background: #92afb5;
 }
 
 footer .wrap {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
+}
+
+footer .logo-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 /* ---------- Responsive ---------- */
