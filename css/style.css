@@ -151,6 +151,29 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+.hero-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin: 0 auto 28px;
+}
+
+.hero-logo-row img {
+  height: 48px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .hero-logo-row {
+    gap: 20px;
+  }
+  .hero-logo-row img {
+    height: 38px;
+  }
+}
+
 .btn {
   display: inline-block;
   font-family: var(--font-body);
