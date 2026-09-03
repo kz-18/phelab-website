@@ -381,6 +381,10 @@ section.block:last-of-type { border-bottom: none; }
   flex: 0 1 380px;
 }
 
+.two-col-row.narrow .person-card {
+  flex: 0 1 328px;
+}
+
 @media (max-width: 860px) {
   .person-card.lead-secondary {
     grid-column: span 1;
