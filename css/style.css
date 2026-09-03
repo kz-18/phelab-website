@@ -351,6 +351,43 @@ section.block:last-of-type { border-bottom: none; }
   min-height: 320px;
 }
 
+.person-card.lead-secondary {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  align-items: stretch;
+}
+
+.person-card.lead-secondary .person-photo {
+  height: 100%;
+}
+
+.person-card.lead-secondary .person-body {
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.two-col-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.two-col-row .person-card {
+  flex: 0 1 380px;
+}
+
+@media (max-width: 860px) {
+  .person-card.lead-secondary {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+}
+
 .person-card.lead .person-photo {
   aspect-ratio: auto;
   height: 100%;
