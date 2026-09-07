@@ -181,17 +181,17 @@ nav a:hover {
 }
 
 .btn-primary {
-  background: var(--teal-dark);
+  background: #92afb5;
   color: #fff;
 }
 .btn-primary:hover { background: var(--teal); text-decoration: none; }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line);
+  background: #92afb5;
+  color: #fff;
 }
-.btn-secondary:hover { border-color: var(--teal); text-decoration: none; }
+
+.btn-secondary:hover { background: var(--teal); text-decoration: none; }
 
 /* ---------- Section scaffolding ---------- */
 
